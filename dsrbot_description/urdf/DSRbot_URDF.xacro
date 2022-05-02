@@ -110,7 +110,7 @@
     <parent link="riel1_link"/>
     <child link="carrier_link"/>
     <axis xyz="1 0 0"/>
-    <limit upper="1.64" lower="-1.575" velocity="1" effort="100"/> 
+    <limit upper="1.61" lower="-1.575" velocity="1" effort="100"/> 
   </joint>
 
   <transmission name="t1">
