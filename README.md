@@ -14,12 +14,13 @@ To run this simulation, start by cloning the contents of this repository into th
   <li>ros-noetic-laser-geometry</li>
   <li>ros-noetic-tf-conversions</li>
   <li>ros-noetic-tf2-geometry-msgs</li>
+  <li>ros-noetic-robot-state-controller</li>
   <li>ros-noetic-joint-state-controller</li>
-  <li>os-noetic-effort-contollers</li>
+  <li>ros-noetic-effort-contollers</li>
   <li>ros-noetic-position-controllers</li>
   <li>ros-noetic-velocity-controllers</li>
   <li>ros-noetic-robot-state-publisher</li>
-  <li>Ros-noetic-joint-state-publisher</li>
+  <li>ros-noetic-joint-state-publisher</li>
   <li>ros-noetic-joint-state-publisher-gui</li>
 </ul>
 You may also not need one or two of those but better to have more and not need them than to need them and not have them.</p>
