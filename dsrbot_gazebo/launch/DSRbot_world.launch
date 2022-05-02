@@ -4,8 +4,11 @@
 		<arg name="gui" value="true"/>	  
 	</include>
 
+    <param name="repisa_description" command="$(find xacro)/xacro '$(find dsrbot_description)/urdf/repisa.xacro'" />
+	<node name="repisa_spawn" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -param repisa_description -model repisa -x 0 -y 0.6 -z 0 -R 1.5708 -P 0 -Y 0" />
+
 	<param name="robot_description" command="$(find xacro)/xacro '$(find dsrbot_description)/urdf/DSRbot_URDF.xacro'" />
-	<node name="DSRbot_spawn" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -param robot_description -model DSRbot -x 0 -y 0 -z 0.5 -R 0 -P 0 -Y 0" />
+	<node name="DSRbot_spawn" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -param robot_description -model DSRbot -x 0 -y 0.05 -z 1 -R 0 -P 0 -Y 0" />
 
 	<include file="$(find dsrbot_control)/launch/dsrbot_control.launch"/>
 </launch>
