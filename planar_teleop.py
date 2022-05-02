@@ -49,7 +49,7 @@ def command():
             pos_h=pos_h-0.01
             pubh.publish(pos_h)
             print("Moving -0.01m horizontally")
-        elif (key=="right" and pos_h<(1.64)):
+        elif (key=="right" and pos_h<(1.6)):
             pos_h=pos_h+0.01
             pubh.publish(pos_h)
             print("Moving 0.01m horizontally")
