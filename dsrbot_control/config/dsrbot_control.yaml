@@ -13,4 +13,4 @@ DSRbot:
   horizontal_pos_controller:
     type: effort_controllers/JointPositionController
     joint: carrier_joint
-    pid: {p: 4.0, i: 0.1, d: 1.5}
+    pid: {p: 100.0, i: 50.0, d: 25.0}
