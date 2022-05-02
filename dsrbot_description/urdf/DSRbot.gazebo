@@ -5,7 +5,7 @@
 	</gazebo>
 
 	<gazebo reference="carrier_link">
-	  <material>Gazebo/Black</material>
+	  <material>Gazebo/Gray</material>
 	</gazebo>
 
 	 <gazebo>
