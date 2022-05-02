@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <robot name="repisa" xmlns:xacro="http://www.ros.org/wiki/xacro">
 	<gazebo reference="repisastl">
+        <material>Gazebo/Blue</material>
 	</gazebo>
 </robot>
