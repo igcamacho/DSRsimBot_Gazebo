@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot name="DSRbot" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="DSRbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 <xacro:include filename="$(find dsrbot_description)/urdf/DSRbot.gazebo" />
 
   <link name="placeholder_base"/>
@@ -15,14 +15,14 @@
 	     		</material>
 		</visual>
 		<collision>
-		      <origin xyz="0 0 0" rpy="0 0 0"/>
+		      <origin xyz="1.765 0 0" rpy="0 0 0"/>
 		      <geometry>
-			<box size="3.53 0.3 2"/>
+			<box size="3.53 0.1 2"/>
 		      </geometry>
 		    </collision>
 		        <inertial>
-			      <origin xyz="0 0 0.015" rpy="0 0 0"/>
-			      <mass value="1"/>
+			      <origin xyz="1.765 0 0" rpy="0 0 0"/>
+			      <mass value="2"/>
 			      <inertia ixx="1" ixy="0" ixz="0"
 				       iyy="1" iyz="0"
 				       izz="1" />
@@ -45,7 +45,7 @@
 		      </geometry>
 		    </collision>
 		        <inertial>
-			      <origin xyz="0 0 0.015" rpy="0 0 0"/>
+			      <origin xyz="0.075 0.05 0.33" rpy="0 0 0"/>
 			      <mass value="0.1"/>
 			      <inertia ixx="1" ixy="0" ixz="0"
 				       iyy="1" iyz="0"
@@ -63,13 +63,13 @@
 	     		</material>
 		</visual>
 						<collision>
-		      <origin xyz="0 0 0" rpy="0 0 0"/>
+		      <origin xyz="1.7575 0 0.14" rpy="0 0 0"/>
 		      <geometry>
 			<box size="3.5 0.03 0.03"/>
 		      </geometry>
 		    </collision>
 		        <inertial>
-			      <origin xyz="0 0 0.015" rpy="0 0 0"/>
+			      <origin xyz="1.7575 0 0.14" rpy="0 0 0"/>
 			      <mass value="1"/>
 			      <inertia ixx="1.4e-03" ixy="0" ixz="0"
 				       iyy="1.4e-03" iyz="0"
@@ -86,14 +86,14 @@
 	       			<color rgba="1 1 1 1.0"/>
 	     		</material>
 		</visual>
-								<collision>
-		      <origin xyz="0 0 0" rpy="0 0 0"/>
-		      <geometry>
+		<collision>
+		    <origin xyz="1.75 0 0" rpy="0 0 0"/>
+		    <geometry>
 			<box size="0.25 0.05 0.33"/>
-		      </geometry>
-		    </collision>
+		    </geometry>
+	    </collision>
 		        <inertial>
-			      <origin xyz="0 0 0.015" rpy="0 0 0"/>
+			      <origin xyz="1.75 0 0" rpy="0 0 0"/>
 			      <mass value="0.1"/>
 			      <inertia ixx="1.4e-03" ixy="0" ixz="0"
 				       iyy="1.4e-03" iyz="0"
@@ -110,7 +110,7 @@
     <parent link="base1_link"/>
     <child link="soporte1_link"/>
     <axis xyz="0 0 1"/>
-    <limit upper="0.95" lower="-0.83" velocity="10" effort="100"/> 
+    <limit upper="0.95" lower="-0.83" velocity="1" effort="100"/> 
   </joint>
 <joint name="riel1_joint" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0"/>
