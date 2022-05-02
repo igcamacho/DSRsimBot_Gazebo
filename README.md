@@ -24,7 +24,7 @@ To run this simulation, start by cloning this repository into the src folder of 
 </ul>
 You may also not need one or two of those but better to have more and not need them than to need them and not have them.</p>
 
-Once everything is in order, you need to start ros with *roscore* and you can launch the simulation in Gazebo by running *roslaunch DSRbot_gazebo DSRbot_world.launch*. You will see a Gazebo window opening up and an incredibly amazingly unbelievably blue shelf staring at you (you'll also be able to see the robot). You can control the robot by publising a float64 value to the /DSRbot/[horizontal or vertical]_pos_controller/command topic in a different terminal. For example: *rostopic pub -1 /DSRbot/horizontal_pos_controller/command std_msgs/Float64 "data: -2"*
+Once everything is in order, you need to start ros with *roscore* and you can launch the simulation in Gazebo by running *roslaunch dsrbot_gazebo DSRbot_world.launch*. You will see a Gazebo window opening up and an incredibly amazingly unbelievably blue shelf staring at you (you'll also be able to see the robot). You can control the robot by publising a float64 value to the /DSRbot/[horizontal or vertical]_pos_controller/command topic in a different terminal. For example: *rostopic pub -1 /DSRbot/horizontal_pos_controller/command std_msgs/Float64 "data: -2"*
 
 To control the robot's movement with your arrow keys you can run the script *planar_teleop.py* using python3. It may also run on python 2 but I didn't try to be honest. Also, that script will ONLY run on Linux, maybe MacOS but like idk tbh.
 
