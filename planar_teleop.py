@@ -29,7 +29,7 @@ def command():
     rospy.init_node('dsrbot_gazebo')
     rospy.sleep(2)
     pos_h=-1.575
-    pos_v=-0.81
+    pos_v=-0.71
     pubv.publish(pos_v)
     pubh.publish(pos_h)
     en=True
@@ -37,7 +37,7 @@ def command():
     while en:
         key=getKey()
         #print(key)
-        if (key=="down" and pos_v>(-0.81)):
+        if (key=="down" and pos_v>(-0.71)):
             pos_v=pos_v-0.01
             pubv.publish(pos_v)
             print("Moving -0.01m vertically")
