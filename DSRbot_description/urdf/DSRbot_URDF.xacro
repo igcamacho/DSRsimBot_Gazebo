@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<robot name="DSRbot" xmlns:xacro="http://ros.org/wiki/xacro">
+<xacro:include filename="$(find DSRbot_description)/urdf/DSRbot.gazebo" />
+
+  <link name="placeholder_base"/>
+
+  <link name="base1_link">
+		<visual>
+		    <origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+				<box size="0.03 0.03 2"/>
+			</geometry>
+			<material name="cyan3">
+	       			<color rgba="0 0.2 0.2 1.0"/>
+	     		</material>
+		</visual>
+		<collision>
+		      <origin xyz="0 0 0" rpy="0 0 0"/>
+		      <geometry>
+			<box size="3.53 0.3 2"/>
+		      </geometry>
+		    </collision>
+		        <inertial>
+			      <origin xyz="0 0 0.015" rpy="0 0 0"/>
+			      <mass value="1"/>
+			      <inertia ixx="1" ixy="0" ixz="0"
+				       iyy="1" iyz="0"
+				       izz="1" />
+			    </inertial>	
+	</link>
+  <link name="soporte1_link">
+		<visual>
+		    <origin xyz="0.0125 0 0" rpy="0 0 0"/>
+			<geometry>
+				<box size="0.075 0.05 0.33"/>
+			</geometry>
+			<material name="cyan2">
+	       			<color rgba="0 0.2 0.2 1.0"/>
+	     		</material>
+		</visual>
+				<collision>
+		      <origin xyz="0 0 0" rpy="0 0 0"/>
+		      <geometry>
+			<box size="0.075 0.05 0.33"/>
+		      </geometry>
+		    </collision>
+		        <inertial>
+			      <origin xyz="0 0 0.015" rpy="0 0 0"/>
+			      <mass value="0.1"/>
+			      <inertia ixx="1" ixy="0" ixz="0"
+				       iyy="1" iyz="0"
+				       izz="1" />
+			    </inertial>	
+	</link>
+   <link name="riel1_link">
+		<visual>
+		    <origin xyz="1.7575 0 0.14" rpy="0 0 0"/>
+			<geometry>
+				<box size="3.5 0.03 0.03"/>
+			</geometry>
+			<material name="cyan3">
+	       			<color rgba="0 0.2 0.2 1.0"/>
+	     		</material>
+		</visual>
+						<collision>
+		      <origin xyz="0 0 0" rpy="0 0 0"/>
+		      <geometry>
+			<box size="3.5 0.03 0.03"/>
+		      </geometry>
+		    </collision>
+		        <inertial>
+			      <origin xyz="0 0 0.015" rpy="0 0 0"/>
+			      <mass value="1"/>
+			      <inertia ixx="1.4e-03" ixy="0" ixz="0"
+				       iyy="1.4e-03" iyz="0"
+				       izz="2.695e-03" />
+			    </inertial>	
+	</link>
+   <link name="carrier_link">
+		<visual>
+		    <origin xyz="1.75 0 0" rpy="0 0 0"/>
+			<geometry>
+				<box size="0.25 0.05 0.33"/>
+			</geometry>
+			<material name="n3">
+	       			<color rgba="1 1 1 1.0"/>
+	     		</material>
+		</visual>
+								<collision>
+		      <origin xyz="0 0 0" rpy="0 0 0"/>
+		      <geometry>
+			<box size="0.25 0.05 0.33"/>
+		      </geometry>
+		    </collision>
+		        <inertial>
+			      <origin xyz="0 0 0.015" rpy="0 0 0"/>
+			      <mass value="0.1"/>
+			      <inertia ixx="1.4e-03" ixy="0" ixz="0"
+				       iyy="1.4e-03" iyz="0"
+				       izz="2.695e-03" />
+			    </inertial>	
+	</link>
+<joint name="base_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="placeholder_base"/>
+    <child link="base1_link"/>
+</joint>
+<joint name="soporte1_joint" type="prismatic">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="base1_link"/>
+    <child link="soporte1_link"/>
+    <axis xyz="0 0 1"/>
+    <limit upper="0.95" lower="-0.83" velocity="10" effort="100"/> 
+  </joint>
+<joint name="riel1_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="soporte1_link"/>
+    <child link="riel1_link"/>
+  </joint>
+<joint name="carrier_joint" type="prismatic">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="riel1_link"/>
+    <child link="carrier_link"/>
+    <axis xyz="1 0 0"/>
+    <limit upper="1.575" lower="-1.575" velocity="1" effort="100"/> 
+  </joint>
+
+  <transmission name="t1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="soporte1_joint">
+	<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>10</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="t2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="carrier_joint">
+	<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>10</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+</robot>
+
