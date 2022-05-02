@@ -78,7 +78,7 @@
 	</link>
    <link name="carrier_link">
 		<visual>
-		    <origin xyz="1.75 0.1 0.75" rpy="1.5708 0 0"/>
+		    <origin xyz="1.5975 0.1 0.7485" rpy="1.5708 0 0"/>
 			<geometry>
                 <mesh filename="$(find dsrbot_description)/meshes/carrier_assy.STL" scale="0.001 0.001 0.001"/>
 			</geometry>
