@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot name="DSRbot" xmlns:xacro="http://ros.org/wiki/xacro">
-<xacro:include filename="$(find DSRbot_description)/urdf/DSRbot.gazebo" />
+<xacro:include filename="$(find dsrbot_description)/urdf/DSRbot.gazebo" />
 
   <link name="placeholder_base"/>
 

@@ -1,11 +1,11 @@
 <launch>	  
 	<include file="$(find gazebo_ros)/launch/empty_world.launch">	    
-		<arg name="world_name" value="$(find DSRbot_gazebo)/worlds/DSRbot.world"/>	    
+		<arg name="world_name" value="$(find dsrbot_gazebo)/worlds/DSRbot.world"/>	    
 		<arg name="gui" value="true"/>	  
 	</include>
 
-	<param name="robot_description" command="$(find xacro)/xacro '$(find DSRbot_description)/urdf/DSRbot_URDF.xacro'" />
+	<param name="robot_description" command="$(find xacro)/xacro '$(find dsrbot_description)/urdf/DSRbot_URDF.xacro'" />
 	<node name="DSRbot_spawn" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -param robot_description -model DSRbot -x 0 -y 0 -z 0.5 -R 0 -P 0 -Y 0" />
 
-	<include file="$(find dsrbot2_control)/launch/dsrbot2_control.launch"/>
+	<include file="$(find dsrbot_control)/launch/dsrbot_control.launch"/>
 </launch>

@@ -1,7 +1,7 @@
 <launch>
 
   <!-- Load joint controller configurations from YAML file to parameter server -->
-  <rosparam file="$(find dsrbot2_control)/config/dsrbot2_control.yaml" command="load"/>
+  <rosparam file="$(find dsrbot_control)/config/dsrbot_control.yaml" command="load"/>
 
   <!-- load the controllers -->
   <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/DSRbot"
