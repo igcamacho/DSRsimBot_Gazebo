@@ -6,7 +6,7 @@
 
   <link name="base1_link">
 		<visual>
-		    <origin xyz="0.04 0.1 1" rpy="1.5708 0 0"/>
+		    <origin xyz="0.04 0.1 0.945" rpy="1.5708 0 0"/>
 			<geometry>
 				<mesh filename="$(find dsrbot_description)/meshes/rieles_verticales.STL" scale="0.001 0.001 0.001"/>
 			</geometry>
@@ -98,7 +98,7 @@
     <parent link="base1_link"/>
     <child link="soporte1_link"/>
     <axis xyz="0 0 1"/>
-    <limit upper="0.95" lower="-0.83" velocity="1" effort="100"/> 
+    <limit upper="0.99" lower="-0.83" velocity="1" effort="100"/> 
   </joint>
 <joint name="riel1_joint" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -110,7 +110,7 @@
     <parent link="riel1_link"/>
     <child link="carrier_link"/>
     <axis xyz="1 0 0"/>
-    <limit upper="1.575" lower="-1.575" velocity="1" effort="100"/> 
+    <limit upper="1.64" lower="-1.575" velocity="1" effort="100"/> 
   </joint>
 
   <transmission name="t1">
